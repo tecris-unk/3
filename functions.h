@@ -22,4 +22,5 @@ void setNumber(int* number);
 void gotoxy(short x, short y);
 void consoleOut(int x, int y, char output);
 int getAnswer();
+
 #endif //INC_3_FUNCTIONS_H

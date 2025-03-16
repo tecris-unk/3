@@ -13,7 +13,7 @@ void strSize(const char *string, int* size);
 void resize(char** array, int size);
 void strCat(char** string, int size, const char* sumString);
 void scanString(char **string, int *size);
-void erase(int *size, char** array, int i, int length);
+void eraseString(int *size, char** array, int i, int length);
 int isEqualStr(char* string1, char* string2);
 
 #endif //INC_2_MYSTRING_H

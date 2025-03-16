@@ -22,17 +22,24 @@ void task2()
         printf("malloc failed\n");
         return;
     }
+
     initSerials(&serials, size);
     outInfo(serials, size);
+
     printf("\nEnter number of series\n");
     int seriesX;
     setNumber(&seriesX);
     findNumber(serials, size, seriesX);
+
     char *nameX;
     int sizeX=0;
     printf("Enter serial name that you need to delete:\n");
     scanString(&nameX, &sizeX);
+
     deleteNameX(&serials, &size, nameX);
+    printf("\n");
+    printf("here are new serials\n");
     outInfo(serials, size);
+
     freeSerials(&serials, size);
 }

@@ -53,15 +53,19 @@ void deleteNameX(SerialInfo **serials, int *size, char *nameX)
 {
     for(int i = 0; i < *size; ++i)
     {
-        printf("%s %s\n", nameX, (*serials)[i].name);
         if(isEqualStr((*serials)[i].name, nameX)){
-            for(int j = i; j < *size - 1; ++j)
-            {
-                (*serials)[j] = (*serials)[j+1];
-            }
-            *serials = realloc(*serials, (*size-1) * sizeof(serials));
-            (*size)--;
+            delete(serials, size, i);
             i--;
         }
     }
+}
+static void delete(SerialInfo **serials, int *size, int pos)
+{
+    free((*serials)[pos].name);
+    for(int i = pos; i < *size - 1; ++i)
+    {
+        (*serials)[i] = (*serials)[i+1];
+    }
+    *serials = realloc(*serials, (*size-1) * sizeof(*serials));
+    (*size)--;
 }

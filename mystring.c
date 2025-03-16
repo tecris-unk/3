@@ -50,7 +50,7 @@ int isEqualStr(char* string1, char* string2)
     if(string1[i] != string2[i]){return 0;}
     return 1;
 }
-void erase(int *size, char** array, int i, int length)
+void eraseString(int *size, char** array, int i, int length)
 {
     if(i < 0 || length <= 0) {return;}
     if(i + length > *size){length = *size - i;}
