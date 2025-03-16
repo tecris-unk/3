@@ -16,7 +16,7 @@ void task2()
     printf("Enter amount of serials\n");
     int size;
     setNumber(&size);
-    SerialInfo *serials = NULL;
+    SerialInfo *serials;
     initSerials(&serials, size);
     outInfo(serials, size);
 
