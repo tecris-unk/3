@@ -16,13 +16,7 @@ void task2()
     printf("Enter amount of serials\n");
     int size;
     setNumber(&size);
-    SerialInfo *serials = (SerialInfo*)malloc(size * sizeof(*serials));
-    if(serials == NULL)
-    {
-        printf("malloc failed\n");
-        return;
-    }
-
+    SerialInfo *serials = NULL;
     initSerials(&serials, size);
     outInfo(serials, size);
 
@@ -37,6 +31,8 @@ void task2()
     scanString(&nameX, &sizeX);
 
     deleteNameX(&serials, &size, nameX);
+    free(nameX);
+
     printf("\n");
     printf("here are new serials\n");
     outInfo(serials, size);

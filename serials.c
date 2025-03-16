@@ -6,6 +6,12 @@
 
 void initSerials(SerialInfo **serials, int size)
 {
+    *serials = (SerialInfo*)malloc(size * sizeof(*serials));
+    if(*serials == NULL)
+    {
+        printf("malloc failed\n");
+        return;
+    }
     for(int i = 0; i < size; ++i)
     {
         printf("%d Serial :", i+1);
