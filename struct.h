@@ -16,5 +16,13 @@ char* name;
 NewSerialInfo newSerialInfo;
 }SerialInfo;
 
+union code
+{
+    int number;
+    struct{
+        int a0:3;
+        int a1:29;
+    } byte;
+};
 
 #endif //INC_3_STRUCT_H

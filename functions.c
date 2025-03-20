@@ -16,6 +16,7 @@ void setNumber(int* number)
         }
         else{*number = *number * 10 + digit - '0';}
     }
+    rewind(stdin);
 }
 void gotoxy(short x, short y)
 {

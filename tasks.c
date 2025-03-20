@@ -6,35 +6,26 @@
 void task1()
 {
     printf("Enter an integer\n");
-    int number;
-    setNumber(&number);
+    union code num;
+    setNumber(&num.number);
 
-    printf("here is number, that is smaller 8 times : %d\n", number>>3);
+
+    printf("here is number, that is smaller 8 times : %d\n", num.byte.a1);
 }
 void task2()
 {
     printf("Enter amount of serials\n");
     int size;
     setNumber(&size);
+
     SerialInfo *serials;
     initSerials(&serials, size);
+
     outInfo(serials, size);
 
-    printf("\nEnter number of series\n");
-    int seriesX;
-    setNumber(&seriesX);
-    findNumber(serials, size, seriesX);
+    findNumber(serials, size);
 
-    char *nameX;
-    int sizeX=0;
-    printf("Enter serial name that you need to delete:\n");
-    scanString(&nameX, &sizeX);
-
-    deleteNameX(&serials, &size, nameX);
-    free(nameX);
-
-    printf("\n");
-    printf("here are new serials\n");
+    deleteNameX(&serials, &size);
     outInfo(serials, size);
 
     freeSerials(&serials, size);
