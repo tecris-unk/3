@@ -78,7 +78,6 @@ static void delete(SerialInfo **serials, int *size, int pos)
 {
     for(int i = pos; i < *size - 1; ++i)
     {
-        printf("%d ", i);
         (*serials)[i] = (*serials)[i+1];
     }
     *serials = realloc(*serials, (*size-1) * sizeof(SerialInfo));
